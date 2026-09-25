@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Command OS & Studio Manager — THE VAULT</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            vaultDark: '#0A0A0B',
+            vaultCard: '#121215',
+            vaultGold: '#D4AF37',
+            vaultGoldMuted: '#AA820A'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Ghost Factory Universal Typography & WCAG AAA Bad-Eyesight Protection -->
+  <style id="ghost-typography">
+    html { font-size: 18px !important; }
+    body { font-size: 1.125rem !important; line-height: 1.65 !important; }
+    p, li { font-size: 1.125rem !important; line-height: 1.65 !important; }
+    button, input, select, textarea { font-size: 1rem !important; min-height: 44px; }
+    .text-xs { font-size: 0.875rem !important; line-height: 1.4 !important; }
+    .text-sm { font-size: 0.95rem !important; line-height: 1.5 !important; }
+    .text-base { font-size: 1.125rem !important; line-height: 1.65 !important; }
+  </style>
+</head>
+<body class="bg-[#0A0A0B] text-white selection:bg-[#D4AF37] selection:text-black text-base text-zinc-100 font-sans antialiased selection:bg-emerald-500">
+
+  <!-- Top Bar -->
+  <header class="border-b border-white/10 bg-[#0E0E12] px-6 py-4">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <a href="/" class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg bg-[#D4AF37] text-black font-cinzel font-black flex items-center justify-center">V</div>
+          <span class="font-cinzel font-bold text-lg text-white">THE VAULT</span>
+        </a>
+        <span class="text-zinc-600 font-mono-vault">/</span>
+        <span class="text-xs font-mono-vault text-[#D4AF37]">STUDIO COMMAND OS</span>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <a href="/" class="text-xs font-mono-vault text-zinc-400 hover:text-white">&larr; Return to Atelier</a>
+        <button id="logout-btn" class="hidden text-xs font-mono-vault text-rose-400 hover:underline">Lock Session</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Login Gate Modal (1-Click Cheat Code Passkey) -->
+  <div id="login-screen" class="min-h-[85vh] flex items-center justify-center px-6 py-12">
+    <div class="w-full max-w-md glass-panel p-8 sm:p-10 rounded-3xl border border-white/10 shadow-2xl space-y-6 text-center">
+      <div class="w-14 h-14 mx-auto rounded-2xl bg-[#D4AF37]/10 border border-[#D4AF37]/40 flex items-center justify-center text-[#D4AF37]">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+      </div>
+
+      <div>
+        <h1 class="text-2xl font-cinzel font-bold text-white">Atelier Command Center</h1>
+        <p class="text-base text-zinc-200 leading-relaxed font-mono-vault mt-1">Authorized Studio Managers & Resident Artists Only</p>
+      </div>
+
+      <!-- 1-Click Cheat Code Button -->
+      <div class="p-4 rounded-xl bg-black/60 border border-[#D4AF37]/30 space-y-2">
+        <span class="text-xs font-semibold font-mono-vault text-zinc-400 block">⚡ PROSPECTIVE BUYER PREVIEW CHEAT CODE</span>
+        <button type="button" id="auto-fill-passcode" class="w-full py-2.5 rounded-lg bg-[#D4AF37]/20 hover:bg-[#D4AF37]/30 border border-[#D4AF37] text-xs font-mono-vault text-[#D4AF37] font-bold transition-all flex items-center justify-center gap-2">
+          <span>⚡ Auto-Fill Demo Passcode</span>
+          <span class="text-xs font-semibold tracking-wider text-zinc-400">(vault2026)</span>
+        </button>
+      </div>
+
+      <!-- Password Form -->
+      <form id="login-form" class="space-y-4">
+        <div>
+          <input type="password" id="passcode-input" placeholder="Enter Atelier Passcode" required class="w-full bg-[#0D0D10] border border-white/15 rounded-xl px-4 py-3 text-sm text-center tracking-widest text-white focus:outline-none focus:border-[#D4AF37]">
+        </div>
+        <button type="submit" class="w-full btn-gold justify-center py-3 text-xs font-mono-vault font-bold uppercase tracking-wider">
+          Unlock Command Suite &rarr;
+        </button>
+      </form>
+      <p id="login-error" class="hidden text-xs text-rose-400 font-mono-vault">Invalid passcode. Try demo passcode: vault2026</p>
+    </div>
+  </div>
+
+  <!-- Authenticated Command Center (Hidden by Default) -->
+  <main id="admin-dashboard" class="hidden max-w-7xl mx-auto px-6 py-10 space-y-10">
+    
+    <!-- Top Stats Row -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="glass-panel p-6 rounded-2xl border border-white/10">
+        <span class="text-xs font-mono-vault text-zinc-400 uppercase">Chamber Bookings</span>
+        <div class="flex items-baseline justify-between mt-2">
+          <span id="stat-total-bookings" class="font-cinzel text-3xl font-bold text-white">0</span>
+          <span class="text-xs font-mono-vault text-emerald-400">+100% active</span>
+        </div>
+      </div>
+      <div class="glass-panel p-6 rounded-2xl border border-white/10">
+        <span class="text-xs font-mono-vault text-zinc-400 uppercase">Lock-In Deposits</span>
+        <div class="flex items-baseline justify-between mt-2">
+          <span id="stat-total-deposits" class="font-cinzel text-3xl font-bold text-[#D4AF37]">$0</span>
+          <span class="text-xs font-mono-vault text-zinc-400">Escrow Locked</span>
+        </div>
+      </div>
+      <div class="glass-panel p-6 rounded-2xl border border-white/10">
+        <span class="text-xs font-mono-vault text-zinc-400 uppercase">Signed Waivers</span>
+        <div class="flex items-baseline justify-between mt-2">
+          <span id="stat-total-waivers" class="font-cinzel text-3xl font-bold text-white">0</span>
+          <span class="text-xs font-mono-vault text-emerald-400">HIPAA Verified</span>
+        </div>
+      </div>
+      <div class="glass-panel p-6 rounded-2xl border border-white/10">
+        <span class="text-xs font-mono-vault text-zinc-400 uppercase">Resident Chambers</span>
+        <div class="flex items-baseline justify-between mt-2">
+          <span class="font-cinzel text-3xl font-bold text-white">4</span>
+          <span class="text-xs font-mono-vault text-[#D4AF37]">100% Occupied</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bookings & Reservations Manager -->
+    <div class="glass-panel rounded-3xl border border-white/10 p-6 sm:p-8 space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <h2 class="font-cinzel text-2xl font-bold text-white">Chamber Booking Feed</h2>
+          <p class="text-base text-zinc-200 leading-relaxed font-mono-vault mt-1">Real-time incoming client appointment requests & deposits</p>
+        </div>
+        <div class="flex gap-3">
+          <button id="export-csv-btn" class="btn-ghost-vault text-xs font-mono-vault py-2 px-4">
+            Export CSV
+          </button>
+          <a href="book" target="_blank" class="btn-gold text-xs font-mono-vault font-bold py-2 px-4">
+            + New Intake
+          </a>
+        </div>
+      </div>
+
+      <!-- Bookings Table Container -->
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-sm">
+          <thead class="border-b border-white/10 text-xs font-mono-vault text-zinc-400 uppercase">
+            <tr>
+              <th class="py-3 px-4">ID</th>
+              <th class="py-3 px-4">Client</th>
+              <th class="py-3 px-4">Artist & Service</th>
+              <th class="py-3 px-4">Session Date</th>
+              <th class="py-3 px-4">Deposit</th>
+              <th class="py-3 px-4">Status</th>
+              <th class="py-3 px-4 text-right">Action</th>
+            </tr>
+          </thead>
+          <tbody id="bookings-tbody" class="divide-y divide-white/5 font-mono-vault text-xs">
+            <!-- Dynamic Injection -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Styled Empty State for Bookings -->
+      <div id="bookings-empty-state" class="hidden py-12 text-center space-y-3">
+        <div class="w-12 h-12 mx-auto rounded-full bg-zinc-900 border border-white/10 flex items-center justify-center text-zinc-500">
+          ∅
+        </div>
+        <h3 class="font-cinzel text-lg font-bold text-white">No Bookings Found</h3>
+        <p class="text-base text-zinc-200 leading-relaxed font-mono-vault max-w-sm mx-auto">All client reservations have been processed. New requests will appear here automatically.</p>
+      </div>
+    </div>
+
+    <!-- Digital Waivers & Medical Declarations -->
+    <div class="glass-panel rounded-3xl border border-white/10 p-6 sm:p-8 space-y-6">
+      <div class="flex items-center justify-between">
+        <div>
+          <h2 class="font-cinzel text-2xl font-bold text-white">Verified Legal Waivers</h2>
+          <p class="text-base text-zinc-200 leading-relaxed font-mono-vault mt-1">Archived health declarations & biometric signature logs</p>
+        </div>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-sm">
+          <thead class="border-b border-white/10 text-xs font-mono-vault text-zinc-400 uppercase">
+            <tr>
+              <th class="py-3 px-4">Certificate</th>
+              <th class="py-3 px-4">Client</th>
+              <th class="py-3 px-4">Date of Birth</th>
+              <th class="py-3 px-4">Known Allergies</th>
+              <th class="py-3 px-4">Signed Timestamp</th>
+              <th class="py-3 px-4 text-right">Verification</th>
+            </tr>
+          </thead>
+          <tbody id="waivers-tbody" class="divide-y divide-white/5 font-mono-vault text-xs">
+            <!-- Dynamic Injection -->
+          </tbody>
+        </table>
+      </div>
+
+      <div id="waivers-empty-state" class="hidden py-12 text-center space-y-3">
+        <h3 class="font-cinzel text-lg font-bold text-white">No Waivers Archived</h3>
+        <p class="text-base text-zinc-200 leading-relaxed font-mono-vault">Clients must sign their digital pre-session waiver prior to ink application.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="assets/js/db.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const DEMO_PASSCODE = 'vault2026';
+      const loginScreen = document.getElementById('login-screen');
+      const dashboard = document.getElementById('admin-dashboard');
+      const passInput = document.getElementById('passcode-input');
+      const autoFillBtn = document.getElementById('auto-fill-passcode');
+      const loginForm = document.getElementById('login-form');
+      const loginError = document.getElementById('login-error');
+      const logoutBtn = document.getElementById('logout-btn');
+
+      // 1-Click Cheat Code Passkey Fill & Submit
+      autoFillBtn.addEventListener('click', () => {
+        passInput.value = DEMO_PASSCODE;
+        authenticate();
+      });
+
+      loginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        authenticate();
+      });
+
+      function authenticate() {
+        if (passInput.value.trim() === DEMO_PASSCODE) {
+          sessionStorage.setItem('vault_admin_auth', 'true');
+          loginScreen.classList.add('hidden');
+          dashboard.classList.remove('hidden');
+          logoutBtn.classList.remove('hidden');
+          renderData();
+          window.showToast('Studio OS Unlocked &bull; Chamber Access Granted', 'gold');
+        } else {
+          loginError.classList.remove('hidden');
+        }
+      }
+
+      logoutBtn.addEventListener('click', () => {
+        sessionStorage.removeItem('vault_admin_auth');
+        window.location.reload();
+      });
+
+      // Check if already authenticated this session
+      if (sessionStorage.getItem('vault_admin_auth') === 'true') {
+        loginScreen.classList.add('hidden');
+        dashboard.classList.remove('hidden');
+        logoutBtn.classList.remove('hidden');
+        renderData();
+      }
+
+      function renderData() {
+        const bookings = window.VaultDB.getBookings();
+        const waivers = window.VaultDB.getWaivers();
+
+        // Update Stats
+        document.getElementById('stat-total-bookings').textContent = bookings.length;
+        const totalDeposits = bookings.reduce((sum, b) => sum + (Number(b.deposit_paid) || 0), 0);
+        document.getElementById('stat-total-deposits').textContent = `$${totalDeposits}`;
+        document.getElementById('stat-total-waivers').textContent = waivers.length;
+
+        // Render Bookings Table
+        const bookingsTbody = document.getElementById('bookings-tbody');
+        const bookingsEmpty = document.getElementById('bookings-empty-state');
+        bookingsTbody.innerHTML = '';
+
+        if (bookings.length === 0) {
+          bookingsEmpty.classList.remove('hidden');
+        } else {
+          bookingsEmpty.classList.add('hidden');
+          bookings.forEach(b => {
+            const tr = document.createElement('tr');
+            tr.className = 'hover:bg-white/[0.02] transition-colors';
+            tr.innerHTML = `
+              <td class="py-3 px-4 font-bold text-[#D4AF37]">#${b.id}</td>
+              <td class="py-3 px-4">
+                <div class="font-bold text-white">${b.client_name}</div>
+                <div class="text-xs font-semibold tracking-wider text-zinc-500">${b.client_email}</div>
+              </td>
+              <td class="py-3 px-4">
+                <div class="text-zinc-200">${b.artist_name}</div>
+                <div class="text-xs font-semibold tracking-wider text-zinc-400">${b.service_type} &bull; ${b.placement}</div>
+              </td>
+              <td class="py-3 px-4 text-zinc-300">${b.session_date} @ ${b.session_time}</td>
+              <td class="py-3 px-4 text-emerald-400 font-bold">$${b.deposit_paid}</td>
+              <td class="py-3 px-4">
+                <span class="px-2 py-0.5 rounded text-xs font-semibold tracking-wider ${
+                  b.status === 'Confirmed' 
+                    ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30' 
+                    : 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
+                }">${b.status}</span>
+              </td>
+              <td class="py-3 px-4 text-right">
+                <button onclick="deleteBooking('${b.id}')" class="text-rose-400 hover:text-rose-300 text-xs">Delete</button>
+              </td>
+            `;
+            bookingsTbody.appendChild(tr);
+          });
+        }
+
+        // Render Waivers Table
+        const waiversTbody = document.getElementById('waivers-tbody');
+        const waiversEmpty = document.getElementById('waivers-empty-state');
+        waiversTbody.innerHTML = '';
+
+        if (waivers.length === 0) {
+          waiversEmpty.classList.remove('hidden');
+        } else {
+          waiversEmpty.classList.add('hidden');
+          waivers.forEach(w => {
+            const tr = document.createElement('tr');
+            tr.className = 'hover:bg-white/[0.02] transition-colors';
+            tr.innerHTML = `
+              <td class="py-3 px-4 font-bold text-emerald-400">#${w.id}</td>
+              <td class="py-3 px-4 text-white font-bold">${w.client_name}</td>
+              <td class="py-3 px-4 text-zinc-400">${w.dob} (Age 18+)</td>
+              <td class="py-3 px-4 text-zinc-300">${w.allergies}</td>
+              <td class="py-3 px-4 text-zinc-500 text-xs font-semibold tracking-wider">${new Date(w.signed_at).toLocaleDateString()}</td>
+              <td class="py-3 px-4 text-right">
+                <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-xs font-semibold tracking-wider">VERIFIED ✓</span>
+              </td>
+            `;
+            waiversTbody.appendChild(tr);
+          });
+        }
+      }
+
+      window.deleteBooking = (id) => {
+        if (confirm(`Remove reservation #${id}?`)) {
+          window.VaultDB.deleteBooking(id);
+          renderData();
+          window.showToast(`Reservation #${id} Removed`, 'gold');
+        }
+      };
+
+      // 1-Click CSV Export
+      document.getElementById('export-csv-btn').addEventListener('click', () => {
+        const bookings = window.VaultDB.getBookings();
+        let csv = 'BookingID,ClientName,Email,Phone,Artist,Service,Date,Time,Placement,Deposit,Status\n';
+        bookings.forEach(b => {
+          csv += `"${b.id}","${b.client_name}","${b.client_email}","${b.client_phone}","${b.artist_name}","${b.service_type}","${b.session_date}","${b.session_time}","${b.placement}","${b.deposit_paid}","${b.status}"\n`;
+        });
+
+        const blob = new Blob([csv], { type: 'text/csv' });
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `the-vault-bookings-${new Date().toISOString().split('T')[0]}.csv`;
+        a.click();
+        window.showToast('CSV Export Generated & Downloaded', 'gold');
+      });
+    });
+  </script>
+</body>
+</html>

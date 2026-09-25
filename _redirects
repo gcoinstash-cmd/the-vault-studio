@@ -1,0 +1,12 @@
+# Clean extensionless URLs for Render, Netlify & Cloudflare Pages
+/artists.html    /artists    301!
+/flash.html      /flash      301!
+/book.html       /book       301!
+/waiver.html     /waiver     301!
+/admin.html      /admin      301!
+
+/artists         /artists.html    200
+/flash           /flash.html      200
+/book            /book.html       200
+/waiver          /waiver.html     200
+/admin           /admin.html      200

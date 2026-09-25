@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reserve Studio Chamber — THE VAULT Tattoo Atelier</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            vaultDark: '#0A0A0B',
+            vaultCard: '#121215',
+            vaultGold: '#D4AF37',
+            vaultGoldMuted: '#AA820A'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Ghost Factory Universal Typography & WCAG AAA Bad-Eyesight Protection -->
+  <style id="ghost-typography">
+    html { font-size: 18px !important; }
+    body { font-size: 1.125rem !important; line-height: 1.65 !important; }
+    p, li { font-size: 1.125rem !important; line-height: 1.65 !important; }
+    button, input, select, textarea { font-size: 1rem !important; min-height: 44px; }
+    .text-xs { font-size: 0.875rem !important; line-height: 1.4 !important; }
+    .text-sm { font-size: 0.95rem !important; line-height: 1.5 !important; }
+    .text-base { font-size: 1.125rem !important; line-height: 1.65 !important; }
+  </style>
+</head>
+<body class="bg-[#0A0A0B] text-white selection:bg-[#D4AF37] selection:text-black text-base text-zinc-100 font-sans antialiased selection:bg-emerald-500">
+
+  <header class="sticky top-0 z-50 glass-nav">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#D4AF37] to-[#121215] p-[2px] flex items-center justify-center">
+          <div class="w-full h-full bg-[#0A0A0B] rounded-[10px] flex items-center justify-center font-cinzel font-black text-lg text-[#D4AF37]">V</div>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-cinzel font-bold text-xl tracking-wider text-white">THE VAULT</span>
+          <span class="text-[9px] font-mono-vault tracking-widest text-[#D4AF37] uppercase">Intake Desk</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-300">
+        <a href="artists" class="hover:text-[#D4AF37]">Resident Artists</a>
+        <a href="flash" class="hover:text-[#D4AF37]">Flash Archive</a>
+        <a href="book" class="text-[#D4AF37] font-semibold">Book Chair</a>
+        <a href="waiver" class="hover:text-[#D4AF37]">Digital Waiver</a>
+        <a href="admin" class="hover:text-[#D4AF37] text-xs font-mono-vault border border-white/10 px-3 py-1.5 rounded-lg">Command OS [⚡]</a>
+      </nav>
+
+      <span class="text-xs font-mono-vault text-zinc-400">Strictly 18+ Only</span>
+    </div>
+  </header>
+
+  <!-- Intake Form Section -->
+  <section class="py-16 max-w-4xl mx-auto px-6">
+    <div class="mb-10 text-center">
+      <span class="text-xs font-mono-vault text-[#D4AF37] uppercase tracking-widest">STEP 1 OF 2 &bull; CLIENT INTAKE</span>
+      <h1 class="text-3xl sm:text-5xl font-cinzel font-bold text-white mt-2">Reserve Atelier Chamber</h1>
+      <p class="text-zinc-400 text-sm mt-3 max-w-lg mx-auto">Complete your project specs below. A \$100 non-refundable lock-in deposit secures your studio chair and is credited toward your final total.</p>
+    </div>
+
+    <!-- Booking Form Card -->
+    <div class="glass-panel p-8 sm:p-12 rounded-3xl border border-white/10 shadow-2xl relative">
+      <form id="vault-booking-form" class="space-y-8">
+        
+        <!-- Service Type Selection -->
+        <div>
+          <label class="block text-xs font-mono-vault text-[#D4AF37] uppercase tracking-wider mb-3">1. Select Service Category</label>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <label class="glass-panel p-4 rounded-xl border border-white/10 cursor-pointer hover:border-[#D4AF37] transition-all flex items-center gap-3">
+              <input type="radio" name="service_type" value="Custom Bespoke Tattoo" checked class="accent-[#D4AF37]">
+              <div>
+                <span class="block text-sm font-bold text-white">Custom Tattoo</span>
+                <span class="text-xs font-semibold text-zinc-400 font-mono-vault">Original Composition</span>
+              </div>
+            </label>
+            <label class="glass-panel p-4 rounded-xl border border-white/10 cursor-pointer hover:border-[#D4AF37] transition-all flex items-center gap-3">
+              <input type="radio" name="service_type" value="Exclusive Flash Claim" class="accent-[#D4AF37]">
+              <div>
+                <span class="block text-sm font-bold text-white">Flash Claim</span>
+                <span class="text-xs font-semibold text-zinc-400 font-mono-vault">Pre-Drawn Archive</span>
+              </div>
+            </label>
+            <label class="glass-panel p-4 rounded-xl border border-white/10 cursor-pointer hover:border-[#D4AF37] transition-all flex items-center gap-3">
+              <input type="radio" name="service_type" value="Luxury Piercing & Gold Fitting" class="accent-[#D4AF37]">
+              <div>
+                <span class="block text-sm font-bold text-white">Fine Piercing</span>
+                <span class="text-xs font-semibold text-zinc-400 font-mono-vault">18K Solid Gold</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Artist Choice & Placement -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div>
+            <label for="artist_name" class="block text-xs font-mono-vault text-zinc-400 uppercase tracking-wider mb-2">2. Preferred Resident Artist</label>
+            <select id="artist_name" required class="w-full bg-[#0D0D10] border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#D4AF37]">
+              <option value="Soren Vex (Dark Surrealism)">Soren Vex — Dark Surrealism ($250/hr)</option>
+              <option value="Kaelen Cross (Micro-Realism)">Kaelen Cross — Classical Micro-Realism ($280/hr)</option>
+              <option value="Mireille Noir (Piercing & Fine-Line)">Mireille Noir — Piercing & Botanical ($200/hr)</option>
+              <option value="Ryker Dane (Sacred Geometry)">Ryker Dane — Cyber Geometric ($220/hr)</option>
+            </select>
+          </div>
+          <div>
+            <label for="placement" class="block text-xs font-mono-vault text-zinc-400 uppercase tracking-wider mb-2">3. Body Placement</label>
+            <input type="text" id="placement" required placeholder="e.g. Outer Forearm, Sternum, Thigh" class="w-full bg-[#0D0D10] border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#D4AF37]">
+          </div>
+        </div>
+
+        <!-- Date & Time Selection -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div>
+            <label for="session_date" class="block text-xs font-mono-vault text-zinc-400 uppercase tracking-wider mb-2">4. Target Session Date</label>
+            <input type="date" id="session_date" required class="w-full bg-[#0D0D10] border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#D4AF37]">
+          </div>
+          <div>
+            <label for="session_time" class="block text-xs font-mono-vault text-zinc-400 uppercase tracking-wider mb-2">5. Session Chamber Time</label>
+            <select id="session_time" required class="w-full bg-[#0D0D10] border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#D4AF37]">
+              <option value="11:00">Chamber Slot 1 &bull; 11:00 AM</option>
+              <option value="14:00" selected>Chamber Slot 2 &bull; 2:00 PM</option>
+              <option value="17:30">Chamber Slot 3 &bull; 5:30 PM (Evening)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Client Contact Details -->
+        <div class="border-t border-white/10 pt-6">
+          <label class="block text-xs font-mono-vault text-[#D4AF37] uppercase tracking-wider mb-4">6. Client Identification</label>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div>
+              <input type="text" id="client_name" required placeholder="Full Legal Name" class="w-full bg-[#0D0D10] border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#D4AF37]">
+            </div>
+            <div>
+              <input type="email" id="client_email" required placeholder="Email Address" class="w-full bg-[#0D0D10] border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#D4AF37]">
+            </div>
+            <div>
+              <input type="tel" id="client_phone" required placeholder="Mobile Number" class="w-full bg-[#0D0D10] border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#D4AF37]">
+            </div>
+          </div>
+        </div>
+
+        <!-- Deposit Confirmation Summary -->
+        <div class="p-6 rounded-2xl bg-black/60 border border-[#D4AF37]/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-mono-vault text-[#D4AF37] uppercase">Chamber Lock-In Deposit</span>
+              <span class="text-xs font-semibold tracking-wider px-2 py-0.5 rounded bg-[#D4AF37]/20 text-[#D4AF37] font-mono-vault">100% Credited</span>
+            </div>
+            <p class="text-base text-zinc-200 leading-relaxed mt-1">Non-refundable reservation fee applied directly to your completed session balance.</p>
+          </div>
+          <div class="text-right">
+            <span class="text-3xl font-cinzel font-bold text-white">$100.00</span>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="w-full btn-gold justify-center py-4 text-sm font-mono-vault font-bold uppercase tracking-widest">
+          Confirm Chair Reservation &bull; \$100 Deposit &rarr;
+        </button>
+      </form>
+
+      <!-- Confirmation Overlay Modal (Hidden by Default) -->
+      <div id="booking-modal" class="hidden absolute inset-0 bg-[#0A0A0B]/95 backdrop-blur-2xl rounded-3xl p-8 sm:p-12 flex flex-col items-center justify-center text-center space-y-6 z-20">
+        <div class="w-16 h-16 rounded-full bg-[#D4AF37]/20 border border-[#D4AF37] flex items-center justify-center text-2xl text-[#D4AF37]">
+          ✓
+        </div>
+        <div>
+          <span class="text-xs font-mono-vault text-[#D4AF37] uppercase tracking-widest">CHAMBER RESERVED</span>
+          <h2 class="text-3xl font-cinzel font-bold text-white mt-1">Reservation Confirmed</h2>
+          <p id="modal-booking-id" class="text-sm font-mono-vault text-zinc-400 mt-2">Booking ID: #VB-PENDING</p>
+        </div>
+        <p class="text-sm text-zinc-300 max-w-md">
+          Your resident artist has been notified and your \$100 lock-in deposit has been logged in The Vault Command OS. Next step: sign your pre-session legal waiver.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href="waiver" class="btn-gold text-xs font-mono-vault font-bold uppercase">Sign Digital Waiver Now &rarr;</a>
+          <a href="admin" class="btn-ghost-vault text-xs font-mono-vault">View in Studio Command OS</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 bg-black text-zinc-500 text-xs font-mono-vault border-t border-white/10 text-center">
+    <p>THE VAULT &bull; Luxury Tattoo Atelier &bull; Zero Walk-Ins &bull; Pure Craft</p>
+  </footer>
+
+  <script src="assets/js/db.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Auto-set tomorrow as min date
+      const dateInput = document.getElementById('session_date');
+      const tomorrow = new Date(Date.now() + 86400000).toISOString().split('T')[0];
+      dateInput.min = tomorrow;
+      dateInput.value = tomorrow;
+
+      // Check URL query parameters for pre-selected artist or flash
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('artist')) {
+        const artist = urlParams.get('artist');
+        const artistSelect = document.getElementById('artist_name');
+        for (let i = 0; i < artistSelect.options.length; i++) {
+          if (artistSelect.options[i].value.includes(artist)) {
+            artistSelect.selectedIndex = i;
+            break;
+          }
+        }
+      }
+
+      const form = document.getElementById('vault-booking-form');
+      const modal = document.getElementById('booking-modal');
+      const modalId = document.getElementById('modal-booking-id');
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const bookingData = {
+          client_name: document.getElementById('client_name').value,
+          client_email: document.getElementById('client_email').value,
+          client_phone: document.getElementById('client_phone').value,
+          artist_name: document.getElementById('artist_name').value,
+          service_type: document.querySelector('input[name="service_type"]:checked').value,
+          session_date: document.getElementById('session_date').value,
+          session_time: document.getElementById('session_time').value,
+          placement: document.getElementById('placement').value,
+          deposit_paid: 100
+        };
+
+        const newRecord = window.VaultDB.addBooking(bookingData);
+        modalId.textContent = `Booking ID: #${newRecord.id} &bull; Artist: ${newRecord.artist_name}`;
+        modal.classList.remove('hidden');
+        window.showToast(`Chamber Reserved: #${newRecord.id}`, 'gold');
+      });
+    });
+  </script>
+</body>
+</html>

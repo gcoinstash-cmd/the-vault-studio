@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resident Virtuosos — THE VAULT Tattoo Atelier</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            vaultDark: '#0A0A0B',
+            vaultCard: '#121215',
+            vaultGold: '#D4AF37',
+            vaultGoldMuted: '#AA820A'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Ghost Factory Universal Typography & WCAG AAA Bad-Eyesight Protection -->
+  <style id="ghost-typography">
+    html { font-size: 18px !important; }
+    body { font-size: 1.125rem !important; line-height: 1.65 !important; }
+    p, li { font-size: 1.125rem !important; line-height: 1.65 !important; }
+    button, input, select, textarea { font-size: 1rem !important; min-height: 44px; }
+    .text-xs { font-size: 0.875rem !important; line-height: 1.4 !important; }
+    .text-sm { font-size: 0.95rem !important; line-height: 1.5 !important; }
+    .text-base { font-size: 1.125rem !important; line-height: 1.65 !important; }
+  </style>
+</head>
+<body class="bg-[#0A0A0B] text-white selection:bg-[#D4AF37] selection:text-black text-base text-zinc-100 font-sans antialiased selection:bg-emerald-500">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 glass-nav">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#D4AF37] to-[#121215] p-[2px] flex items-center justify-center">
+          <div class="w-full h-full bg-[#0A0A0B] rounded-[10px] flex items-center justify-center font-cinzel font-black text-lg text-[#D4AF37]">V</div>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-cinzel font-bold text-xl tracking-wider text-white">THE VAULT</span>
+          <span class="text-[9px] font-mono-vault tracking-widest text-[#D4AF37] uppercase">Resident Guild</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-300">
+        <a href="artists" class="text-[#D4AF37] font-semibold">Resident Artists</a>
+        <a href="flash" class="hover:text-[#D4AF37] transition-colors">Flash Archive</a>
+        <a href="book" class="hover:text-[#D4AF37] transition-colors">Book Chair</a>
+        <a href="waiver" class="hover:text-[#D4AF37] transition-colors">Digital Waiver</a>
+        <a href="admin" class="hover:text-[#D4AF37] text-xs font-mono-vault border border-white/10 px-3 py-1.5 rounded-lg">Command OS [⚡]</a>
+      </nav>
+
+      <a href="book" class="btn-gold text-xs uppercase tracking-widest font-mono-vault font-bold">Reserve Chair</a>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <div class="border-b border-white/10 bg-[#0E0E12] py-16">
+    <div class="max-w-7xl mx-auto px-6">
+      <span class="text-xs font-mono-vault text-[#D4AF37] uppercase tracking-widest">PERMANENT RESIDENCY</span>
+      <h1 class="text-4xl sm:text-6xl font-cinzel font-bold text-white mt-2">The Resident Guild</h1>
+      <p class="text-zinc-400 max-w-2xl mt-4 text-base">Each resident master operates their own sterile private chamber within The Vault. Select an artist to review their archive, specialty, and hourly booking rate.</p>
+    </div>
+  </div>
+
+  <!-- Artists Grid -->
+  <section class="py-20 max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      
+      <!-- Artist 1: Soren Vex -->
+      <div class="glass-panel rounded-3xl p-8 border border-white/10 flex flex-col justify-between">
+        <div>
+          <div class="aspect-[16/10] rounded-2xl overflow-hidden bg-zinc-950 mb-6 relative">
+            <img src="https://images.unsplash.com/photo-1542385151-efd9000785a0?auto=format&fit=crop&w=800&q=80" alt="Soren Vex" class="w-full h-full object-cover filter grayscale">
+            <div class="absolute bottom-4 left-4 bg-black/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-[#D4AF37]/30 text-xs font-mono-vault text-[#D4AF37]">
+              Studio Chamber: 01
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <h2 class="font-cinzel font-bold text-2xl text-white">Soren Vex</h2>
+            <span class="text-sm font-mono-vault text-[#D4AF37] font-bold">$250 / Hour</span>
+          </div>
+          <p class="text-xs font-mono-vault text-zinc-400 mt-1 uppercase tracking-wider">Dark Surrealism &bull; Heavy Blackwork &bull; Anatomy</p>
+          <p class="text-sm text-zinc-300 mt-4 leading-relaxed">
+            Trained in Berlin and Tokyo, Soren constructs expansive mythological and occult backpieces with architectural precision. Minimum session booking is 3 hours.
+          </p>
+        </div>
+        <div class="mt-8 pt-6 border-t border-white/10 flex items-center justify-between">
+          <span class="text-xs font-mono-vault text-zinc-400">Next Opening: <strong class="text-white">Oct 4</strong></span>
+          <a href="book?artist=Soren+Vex" class="btn-gold text-xs uppercase font-mono-vault font-bold">Book Soren &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Artist 2: Kaelen Cross -->
+      <div class="glass-panel rounded-3xl p-8 border border-white/10 flex flex-col justify-between">
+        <div>
+          <div class="aspect-[16/10] rounded-2xl overflow-hidden bg-zinc-950 mb-6 relative">
+            <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=800&q=80" alt="Kaelen Cross" class="w-full h-full object-cover filter grayscale">
+            <div class="absolute bottom-4 left-4 bg-black/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-[#D4AF37]/30 text-xs font-mono-vault text-[#D4AF37]">
+              Studio Chamber: 02
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <h2 class="font-cinzel font-bold text-2xl text-white">Kaelen Cross</h2>
+            <span class="text-sm font-mono-vault text-[#D4AF37] font-bold">$280 / Hour</span>
+          </div>
+          <p class="text-xs font-mono-vault text-zinc-400 mt-1 uppercase tracking-wider">Single-Needle &bull; Classical Micro-Realism &bull; Statuary</p>
+          <p class="text-sm text-zinc-300 mt-4 leading-relaxed">
+            Kaelen utilizes 0.18mm custom single needles to recreate museum-grade Italian Renaissance masterworks, fine marble statues, and photorealistic portraits.
+          </p>
+        </div>
+        <div class="mt-8 pt-6 border-t border-white/10 flex items-center justify-between">
+          <span class="text-xs font-mono-vault text-zinc-400">Next Opening: <strong class="text-white">Oct 6</strong></span>
+          <a href="book?artist=Kaelen+Cross" class="btn-gold text-xs uppercase font-mono-vault font-bold">Book Kaelen &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Artist 3: Mireille Noir -->
+      <div class="glass-panel rounded-3xl p-8 border border-white/10 flex flex-col justify-between">
+        <div>
+          <div class="aspect-[16/10] rounded-2xl overflow-hidden bg-zinc-950 mb-6 relative">
+            <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=800&q=80" alt="Mireille Noir" class="w-full h-full object-cover filter grayscale">
+            <div class="absolute bottom-4 left-4 bg-black/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-[#D4AF37]/30 text-xs font-mono-vault text-[#D4AF37]">
+              Studio Chamber: 03
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <h2 class="font-cinzel font-bold text-2xl text-white">Mireille Noir</h2>
+            <span class="text-sm font-mono-vault text-[#D4AF37] font-bold">$200 / Hour</span>
+          </div>
+          <p class="text-xs font-mono-vault text-zinc-400 mt-1 uppercase tracking-wider">Luxury Piercing &bull; 18K Solid Gold &bull; Botanical Ink</p>
+          <p class="text-sm text-zinc-300 mt-4 leading-relaxed">
+            Certified APP member with 9 years in bespoke ear curations. Specializing in high-end titanium and 18K solid yellow and white gold needle piercings.
+          </p>
+        </div>
+        <div class="mt-8 pt-6 border-t border-white/10 flex items-center justify-between">
+          <span class="text-xs font-mono-vault text-zinc-400">Next Opening: <strong class="text-white">Oct 7</strong></span>
+          <a href="book?artist=Mireille+Noir" class="btn-gold text-xs uppercase font-mono-vault font-bold">Book Mireille &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Artist 4: Ryker Dane -->
+      <div class="glass-panel rounded-3xl p-8 border border-white/10 flex flex-col justify-between">
+        <div>
+          <div class="aspect-[16/10] rounded-2xl overflow-hidden bg-zinc-950 mb-6 relative">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" alt="Ryker Dane" class="w-full h-full object-cover filter grayscale">
+            <div class="absolute bottom-4 left-4 bg-black/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-[#D4AF37]/30 text-xs font-mono-vault text-[#D4AF37]">
+              Studio Chamber: 04
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <h2 class="font-cinzel font-bold text-2xl text-white">Ryker Dane</h2>
+            <span class="text-sm font-mono-vault text-[#D4AF37] font-bold">$220 / Hour</span>
+          </div>
+          <p class="text-xs font-mono-vault text-zinc-400 mt-1 uppercase tracking-wider">Geometric Blackwork &bull; Cyber-Sigilism &bull; Dotwork</p>
+          <p class="text-sm text-zinc-300 mt-4 leading-relaxed">
+            Ryker combines computational algorithmic patterns with traditional ceremonial stippling to create flowing sacred geometry tailored to human muscle contours.
+          </p>
+        </div>
+        <div class="mt-8 pt-6 border-t border-white/10 flex items-center justify-between">
+          <span class="text-xs font-mono-vault text-zinc-400">Next Opening: <strong class="text-white">Oct 9</strong></span>
+          <a href="book?artist=Ryker+Dane" class="btn-gold text-xs uppercase font-mono-vault font-bold">Book Ryker &rarr;</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 bg-black text-zinc-500 text-xs font-mono-vault border-t border-white/10 text-center">
+    <p>THE VAULT &bull; Luxury Tattoo Atelier &bull; All Sessions Require A Non-Refundable $100 Lock-In Deposit</p>
+  </footer>
+
+  <script src="assets/js/db.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

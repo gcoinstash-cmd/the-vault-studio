@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flash Archive — THE VAULT Luxury Atelier</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            vaultDark: '#0A0A0B',
+            vaultCard: '#121215',
+            vaultGold: '#D4AF37',
+            vaultGoldMuted: '#AA820A'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Ghost Factory Universal Typography & WCAG AAA Bad-Eyesight Protection -->
+  <style id="ghost-typography">
+    html { font-size: 18px !important; }
+    body { font-size: 1.125rem !important; line-height: 1.65 !important; }
+    p, li { font-size: 1.125rem !important; line-height: 1.65 !important; }
+    button, input, select, textarea { font-size: 1rem !important; min-height: 44px; }
+    .text-xs { font-size: 0.875rem !important; line-height: 1.4 !important; }
+    .text-sm { font-size: 0.95rem !important; line-height: 1.5 !important; }
+    .text-base { font-size: 1.125rem !important; line-height: 1.65 !important; }
+  </style>
+</head>
+<body class="bg-[#0A0A0B] text-white selection:bg-[#D4AF37] selection:text-black text-base text-zinc-100 font-sans antialiased selection:bg-emerald-500">
+
+  <header class="sticky top-0 z-50 glass-nav">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#D4AF37] to-[#121215] p-[2px] flex items-center justify-center">
+          <div class="w-full h-full bg-[#0A0A0B] rounded-[10px] flex items-center justify-center font-cinzel font-black text-lg text-[#D4AF37]">V</div>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-cinzel font-bold text-xl tracking-wider text-white">THE VAULT</span>
+          <span class="text-[9px] font-mono-vault tracking-widest text-[#D4AF37] uppercase">Flash Wall</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-300">
+        <a href="artists" class="hover:text-[#D4AF37]">Resident Artists</a>
+        <a href="flash" class="text-[#D4AF37] font-semibold">Flash Archive</a>
+        <a href="book" class="hover:text-[#D4AF37]">Book Chair</a>
+        <a href="waiver" class="hover:text-[#D4AF37]">Digital Waiver</a>
+        <a href="admin" class="hover:text-[#D4AF37] text-xs font-mono-vault border border-white/10 px-3 py-1.5 rounded-lg">Command OS [⚡]</a>
+      </nav>
+
+      <a href="book" class="btn-gold text-xs uppercase tracking-widest font-mono-vault font-bold">Claim Flash</a>
+    </div>
+  </header>
+
+  <!-- Banner -->
+  <div class="border-b border-white/10 bg-[#0E0E12] py-16">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+      <div>
+        <span class="text-xs font-mono-vault text-[#D4AF37] uppercase tracking-widest">ONE-OF-ONE DESIGNS</span>
+        <h1 class="text-4xl sm:text-6xl font-cinzel font-bold text-white mt-2">Flash Archive & Wall</h1>
+        <p class="text-zinc-400 max-w-xl mt-4 text-sm">Once a flash design is claimed and inked, it is marked as retired and never repeated. Price includes full session time and sterile aftercare kit.</p>
+      </div>
+      <div class="flex gap-2">
+        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-mono-vault text-[#D4AF37]">
+          ★ 8 Available / 4 Inked
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Flash Gallery -->
+  <section class="py-20 max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      
+      <!-- Flash 01 -->
+      <div class="glass-panel rounded-2xl p-5 border border-white/10 hover:border-[#D4AF37] transition-all group">
+        <div class="aspect-square rounded-xl overflow-hidden bg-zinc-950 mb-4 relative">
+          <img src="https://images.unsplash.com/photo-1562962230-16e4623d36e6?auto=format&fit=crop&w=600&q=80" alt="Flash 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <span class="absolute top-3 left-3 bg-black/80 px-2.5 py-1 rounded text-xs font-mono-vault text-[#D4AF37] border border-[#D4AF37]/30">#VF-01</span>
+          <span class="absolute bottom-3 right-3 bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded text-xs font-semibold tracking-wider font-mono-vault font-bold">AVAILABLE</span>
+        </div>
+        <h3 class="font-cinzel font-bold text-lg text-white">Obsidian Dagger</h3>
+        <p class="text-xs font-mono-vault text-zinc-400 mt-1">Artist: Soren Vex &bull; Approx. 2.5 hrs</p>
+        <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
+          <span class="font-cinzel font-bold text-xl text-[#D4AF37]">$350</span>
+          <a href="book?flash=VF-01&price=350" class="btn-gold text-xs font-semibold uppercase font-mono-vault py-1.5 px-3">Claim &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Flash 02 -->
+      <div class="glass-panel rounded-2xl p-5 border border-white/10 hover:border-[#D4AF37] transition-all group">
+        <div class="aspect-square rounded-xl overflow-hidden bg-zinc-950 mb-4 relative">
+          <img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=600&q=80" alt="Flash 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <span class="absolute top-3 left-3 bg-black/80 px-2.5 py-1 rounded text-xs font-mono-vault text-[#D4AF37] border border-[#D4AF37]/30">#VF-02</span>
+          <span class="absolute bottom-3 right-3 bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded text-xs font-semibold tracking-wider font-mono-vault font-bold">AVAILABLE</span>
+        </div>
+        <h3 class="font-cinzel font-bold text-lg text-white">Solar Eclipse Serpent</h3>
+        <p class="text-xs font-mono-vault text-zinc-400 mt-1">Artist: Soren Vex &bull; Approx. 3.0 hrs</p>
+        <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
+          <span class="font-cinzel font-bold text-xl text-[#D4AF37]">$420</span>
+          <a href="book?flash=VF-02&price=420" class="btn-gold text-xs font-semibold uppercase font-mono-vault py-1.5 px-3">Claim &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Flash 03 -->
+      <div class="glass-panel rounded-2xl p-5 border border-white/10 hover:border-[#D4AF37] transition-all group">
+        <div class="aspect-square rounded-xl overflow-hidden bg-zinc-950 mb-4 relative">
+          <img src="https://images.unsplash.com/photo-1560707303-4e980ce876ad?auto=format&fit=crop&w=600&q=80" alt="Flash 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <span class="absolute top-3 left-3 bg-black/80 px-2.5 py-1 rounded text-xs font-mono-vault text-[#D4AF37] border border-[#D4AF37]/30">#VF-03</span>
+          <span class="absolute bottom-3 right-3 bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded text-xs font-semibold tracking-wider font-mono-vault font-bold">AVAILABLE</span>
+        </div>
+        <h3 class="font-cinzel font-bold text-lg text-white">Gothic Rose Sigil</h3>
+        <p class="text-xs font-mono-vault text-zinc-400 mt-1">Artist: Mireille Noir &bull; Approx. 2.0 hrs</p>
+        <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
+          <span class="font-cinzel font-bold text-xl text-[#D4AF37]">$380</span>
+          <a href="book?flash=VF-03&price=380" class="btn-gold text-xs font-semibold uppercase font-mono-vault py-1.5 px-3">Claim &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Flash 04 -->
+      <div class="glass-panel rounded-2xl p-5 border border-white/10 hover:border-[#D4AF37] transition-all group">
+        <div class="aspect-square rounded-xl overflow-hidden bg-zinc-950 mb-4 relative">
+          <img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=600&q=80" alt="Flash 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <span class="absolute top-3 left-3 bg-black/80 px-2.5 py-1 rounded text-xs font-mono-vault text-[#D4AF37] border border-[#D4AF37]/30">#VF-04</span>
+          <span class="absolute bottom-3 right-3 bg-zinc-800 text-zinc-500 border border-white/10 px-2 py-0.5 rounded text-xs font-semibold tracking-wider font-mono-vault font-bold">INKED / RETIRED</span>
+        </div>
+        <h3 class="font-cinzel font-bold text-lg text-zinc-500">Chiaroscuro Nocturne</h3>
+        <p class="text-xs font-mono-vault text-zinc-500 mt-1">Artist: Kaelen Cross &bull; Inked Oct 2026</p>
+        <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
+          <span class="font-cinzel font-bold text-xl text-zinc-600">$550</span>
+          <span class="text-xs font-mono-vault text-zinc-500">Retired</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 bg-black text-zinc-500 text-xs font-mono-vault border-t border-white/10 text-center">
+    <p>THE VAULT &bull; Flash Wall Archive &bull; Inked Art Is Never Replicated</p>
+  </footer>
+
+  <script src="assets/js/db.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

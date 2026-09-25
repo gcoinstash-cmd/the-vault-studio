@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: the-vault-studio
+    env: static
+    buildCommand: ""
+    staticPublishPath: .
+    pullRequestPreviewsEnabled: false
